@@ -1,0 +1,19 @@
+.header-menu-item {
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--clr-black);
+  text-decoration: none;
+}
+
+.header-menu-item.active {
+  background-color: var(--clr-gray);
+}
+
+.header-menu-item:hover {
+  background-color: var(--clr-gray-200);
+}
+
+html[lang="ar"] .header-menu-item {
+  padding: 0 10px;
+}

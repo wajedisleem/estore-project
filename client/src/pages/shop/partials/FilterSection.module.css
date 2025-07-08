@@ -1,0 +1,17 @@
+.shop-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.shop-filters-category-sort {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+  .shop-filters {
+    flex-direction: column;
+  }
+}

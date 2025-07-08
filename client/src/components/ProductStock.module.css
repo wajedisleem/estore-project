@@ -1,0 +1,11 @@
+.product-stock-only-left {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--clr-red);
+}
+
+.product-stock-available {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--clr-gray-dark);
+}

@@ -1,0 +1,9 @@
+.product-price {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--clr-gray-darkest);
+}
+
+html[lang='ar'] .product-price {
+  flex-direction: row-reverse;
+}

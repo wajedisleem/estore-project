@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--clr-gray-200);
+}
+
+.footer-box {
+  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+  .footer-box {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+}

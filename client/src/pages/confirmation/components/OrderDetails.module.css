@@ -1,0 +1,31 @@
+.order-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f7;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  border: 1px solid #eaeaea;
+}
+
+.order-details-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+}
+
+.order-detail-label {
+  font-weight: 600;
+  color: var(--clr-gray-dark);
+}
+
+.order-detail-value {
+  font-weight: 600;
+  display: flex;
+  gap: 0.3rem;
+}
+
+html[lang='ar'] .order-detail-value {
+  flex-direction: row-reverse;
+}

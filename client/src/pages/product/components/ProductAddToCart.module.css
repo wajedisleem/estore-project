@@ -1,0 +1,133 @@
+.add-to-cart-section {
+  display: flex;
+  gap: 2rem;
+}
+
+.out-of-stock {
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s;
+  background-color: var(--clr-gray-dark);
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--clr-white);
+  letter-spacing: 2px;
+}
+
+.btn-add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  background-color: var(--clr-black);
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--clr-white);
+  letter-spacing: 1px;
+}
+
+.btn-add-to-cart:hover {
+  background-color: var(--clr-gray-darkest);
+}
+
+.added-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.added-to-cart-label {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-green);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--clr-white);
+  letter-spacing: 1px;
+}
+
+.btn-remove-from-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 9px;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 100%;
+  background-color: var(--clr-red);
+  border: none;
+}
+
+.btn-remove-from-cart:hover {
+  background-color: var(--clr-red-dark);
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn-product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 100%;
+  background: var(--clr-gray);
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.btn-product-quantity:first-child {
+  border-radius: 3px 0 0 3px;
+}
+.btn-product-quantity:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+html[lang='ar'] .btn-product-quantity:first-child {
+  border-radius: 0 3px 3px 0;
+}
+html[lang='ar'] .btn-product-quantity:last-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.btn-product-quantity:hover {
+  background-color: var(--clr-gray-200);
+}
+
+.product-quantity-value {
+  min-width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+@media (max-width: 480px) {
+  .add-to-cart-section {
+    gap: 1rem;
+  }
+
+  .btn-add-to-cart {
+    width: 100%;
+  }
+
+  .btn-remove-from-cart img {
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,15 @@
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.intro-title {
+  font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 1.5rem;
+  }
+}

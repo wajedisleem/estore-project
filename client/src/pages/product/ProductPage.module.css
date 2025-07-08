@@ -1,0 +1,16 @@
+.product-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.product-details-box {
+  display: flex;
+  gap: 3rem;
+}
+
+@media (max-width: 480px) {
+  .product-details-box {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

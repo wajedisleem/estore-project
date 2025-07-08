@@ -1,0 +1,9 @@
+.about-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.about-title {
+  font-size: 2rem;
+}

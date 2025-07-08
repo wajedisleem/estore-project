@@ -1,0 +1,12 @@
+.benefit-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .benefit-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

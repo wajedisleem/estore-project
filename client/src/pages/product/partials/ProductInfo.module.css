@@ -1,0 +1,6 @@
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 60%;
+  gap: 1rem;
+}

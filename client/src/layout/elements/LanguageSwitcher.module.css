@@ -1,0 +1,26 @@
+.btn-language {
+  padding: 9px;
+  background-color: var(--clr-gray);
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-language:hover {
+  background-color: var(--clr-gray-200);
+}
+
+.btn-language-icon {
+  width: 22px;
+}
+
+@media (max-width: 480px) {
+  .btn-language {
+    display: none;
+  }
+
+  .btn-language-mobile {
+    display: block;
+  }
+}

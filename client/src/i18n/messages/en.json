@@ -1,0 +1,106 @@
+{
+  "Layout": {
+    "Title": "eStore Project",
+    "By": "By Wajed Isleem",
+    "Total": "Total",
+    "Copyrights": "All Right Reserved © 2025"
+  },
+  "Shared": {
+    "ContinueShopping": "Continue Shopping"
+  },
+  "Home": {
+    "Title": "Home",
+    "PageTitle": "Welcome to eStore Project",
+    "PageSubTitle": "Discover a wide range of products tailored to your needs. Enjoy seamless shopping with us.",
+    "Loading": "Loading ...",
+    "NewArrivals": "New Arrivals",
+    "FeaturedProducts": "Featured Products"
+  },
+  "Shop": {
+    "Title": "Shop",
+    "PageTitle": "Shop Page",
+    "PageSubTitle": "Explore our collection of products.",
+    "Filters": {
+      "SearchPlaceholder": "Search for products ...",
+      "AllCategories": "All Categories",
+      "SortBy": "Sort By",
+      "SortOptions": {
+        "Alphabetical": "Name: A to Z",
+        "PriceLowToHigh": "Price: Low to High",
+        "PriceHighToLow": "Price: High to Low"
+      }
+    },
+    "NoProductsFound": "No products found for this search.",
+    "ClearFilters": "Clear Filters"
+  },
+  "Product": {
+    "Title": "Product Details",
+    "Home": "Home",
+    "Shop": "Shop",
+    "Reviews": "reviews",
+    "RelatedProducts": "Related Products",
+    "AddToCart": "Add to Cart",
+    "AddedToCart": "Added to cart",
+    "Loading": "Loading product details ...",
+    "Currency": "CA$",
+    "OnlyLeft": "Only {stock} left!",
+    "ItemsAvailable": "{stock} items available",
+    "OutOfStock": "Out of Stock",
+    "Save": "Save",
+    "New": "New!",
+    "Featured": "Featured"
+  },
+  "About": {
+    "Title": "About Us",
+    "SubTitle": "Enjoy a unique shopping experience.",
+    "Vision": {
+      "Title": "Our Vision",
+      "Description": "To provide high-quality products and exceptional customer service, ensuring every shopping experience is convenient, enjoyable, and exceeds expectations."
+    },
+    "FAQ": {
+      "Title": "Frequently Asked Questions"
+    },
+    "Contact": {
+      "Title": "Get in Touch",
+      "Email": "Email",
+      "Phone": "Phone",
+      "Address": "Address"
+    }
+  },
+  "Cart": {
+    "Title": "Shopping Cart",
+    "Empty": {
+      "Message": "Your cart is empty."
+    },
+    "Summary": {
+      "Title": "Order Summary",
+      "Subtotal": "Subtotal",
+      "Shipping": "Shipping",
+      "FreeShipping": "Free",
+      "Tax": "Tax",
+      "Total": "Total",
+      "PlaceOrder": "Place Order",
+      "PlacingOrder": "Placing Order ..."
+    }
+  },
+  "Confirmation": {
+    "Title": "Order Confirmation",
+    "Header": {
+      "Title": "Thank You for Your Order !",
+      "Subtitle": "Your order is being processed and we will notify you once it is shipped."
+    },
+    "OrderDetails": {
+      "OrderID": "Order ID:",
+      "OrderDate": "Order Date:",
+      "DeliveryDate": "Delivery Date:",
+      "PaymentMethod": "Payment Method:",
+      "CreditCard": "Credit Card",
+      "TotalAmount": "Total Amount:"
+    }
+  },
+  "NotFound": {
+    "Title": "Page Not Found",
+    "SubTitle": "Sorry, the page you are looking for does not exist",
+    "ReturnHome": "Return to Home Page"
+  }
+}

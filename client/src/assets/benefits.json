@@ -1,0 +1,30 @@
+[
+  {
+    "icon": "/images/benefits/delivery.svg",
+    "en_title": "Free Delivery",
+    "ar_title": "توصيل مجاني",
+    "en_description": "No extra shipping costs",
+    "ar_description": "لا تكاليف شحن إضافية"
+  },
+  {
+    "icon": "/images/benefits/support.svg",
+    "en_title": "24/7 Support",
+    "ar_title": "دعم على مدار الساعة",
+    "en_description": "Help anytime, anywhere",
+    "ar_description": "المساعدة في أي وقت"
+  },
+  {
+    "icon": "/images/benefits/discount.svg",
+    "en_title": "Discounts",
+    "ar_title": "خصومات",
+    "en_description": "Save big on top deals",
+    "ar_description": "وفر الكثير على أفضل العروض"
+  },
+  {
+    "icon": "/images/benefits/moneyback.svg",
+    "en_title": "Money-Back",
+    "ar_title": "استرداد الأموال",
+    "en_description": "Full refund, no risk",
+    "ar_description": "استرداد كامل، بدون مخاطر"
+  }
+]

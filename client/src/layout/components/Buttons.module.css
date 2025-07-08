@@ -1,0 +1,12 @@
+.header-buttons {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  gap: 0.7rem;
+}
+
+@media (max-width: 480px) {
+  .header-language-switcher {
+    display: none;
+  }
+}

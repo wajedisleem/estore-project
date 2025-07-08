@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "en_question": "What payment methods do you accept?",
+    "en_answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay.",
+    "ar_question": "ما هي طرق الدفع التي تقبلونها؟",
+    "ar_answer": "نحن نقبل جميع بطاقات الائتمان الرئيسية (فيزا، ماستركارد، أمريكان إكسبريس)، باي بال، وآبل باي."
+  },
+  {
+    "id": 2,
+    "en_question": "How long does shipping take?",
+    "en_answer": "Domestic orders typically arrive within 3-5 business days. International shipping may take 7-14 business days depending on the location.",
+    "ar_question": "كم من الوقت تستغرق عملية الشحن؟",
+    "ar_answer": "عادة ما تصل الطلبات المحلية خلال 3-5 أيام عمل. قد يستغرق الشحن الدولي 7-14 يوم عمل حسب الموقع."
+  },
+  {
+    "id": 3,
+    "en_question": "What is your return policy?",
+    "en_answer": "We offer a 30-day return policy for all unused items in original packaging. Please contact our customer support team to initiate a return.",
+    "ar_question": "ما هي سياسة الإرجاع الخاصة بكم؟",
+    "ar_answer": "نقدم سياسة إرجاع لمدة 30 يومًا لجميع المنتجات غير المستخدمة في عبواتها الأصلية. يرجى الاتصال بفريق دعم العملاء لبدء عملية الإرجاع."
+  },
+  {
+    "id": 4,
+    "en_question": "Do you ship internationally?",
+    "en_answer": "Yes, we ship to most countries worldwide. International shipping fees and delivery times vary by location.",
+    "ar_question": "هل تقومون بالشحن دوليًا؟",
+    "ar_answer": "نعم، نقوم بالشحن إلى معظم دول العالم. تختلف رسوم الشحن الدولي وأوقات التسليم حسب الموقع."
+  },
+  {
+    "id": 5,
+    "en_question": "How do I track my order?",
+    "en_answer": "Once your order ships, you will receive a confirmation email with tracking information. You can also track your order by logging into your account on our website.",
+    "ar_question": "كيف يمكنني تتبع طلبي؟",
+    "ar_answer": "بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني للتأكيد مع معلومات التتبع. يمكنك أيضًا تتبع طلبك عن طريق تسجيل الدخول إلى حسابك على موقعنا."
+  }
+]

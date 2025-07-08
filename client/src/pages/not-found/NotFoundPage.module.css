@@ -1,0 +1,40 @@
+.not-fount-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.not-found-image {
+  width: 25rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.not-found-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--clr-gray-darkest);
+}
+
+.not-found-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.btn-home-return {
+  display: inline-block;
+  background-color: #4caf50;
+  color: var(--clr-white);
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-home-return:hover {
+  background-color: #45a049;
+}

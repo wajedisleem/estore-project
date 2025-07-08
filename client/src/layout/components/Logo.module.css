@@ -1,0 +1,42 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color:var(--clr-black);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.logo-img {
+  width: 50px;
+}
+
+.logo-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo-subtitle {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 30px;
+  }
+
+  .logo-title {
+    font-size: 1.2rem;
+  }
+
+  .logo-subtitle {
+    display: none;
+  }
+}

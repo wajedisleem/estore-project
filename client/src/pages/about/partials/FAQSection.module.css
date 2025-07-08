@@ -1,0 +1,25 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.faq-header {
+  font-size: 2rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 900px;
+}
+
+@media (max-width: 480px) {
+  .faq-list {
+    width: 100%;
+  }
+}

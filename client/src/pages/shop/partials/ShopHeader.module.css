@@ -1,0 +1,9 @@
+.shop-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.shop-title {
+  font-size: 2rem;
+}

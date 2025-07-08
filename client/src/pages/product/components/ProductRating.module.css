@@ -1,0 +1,22 @@
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-rating-stars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.product-rating-star {
+  color: var(--clr-gray-light);
+}
+
+.product-rating-star.filled {
+  color: var(--clr-yellow);
+}
+
+.product-review-count {
+  color: var(--clr-gray-dark);
+}

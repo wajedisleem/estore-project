@@ -1,0 +1,16 @@
+.product--price-stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.product-price {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-stock{
+  font-size: 1rem;
+}

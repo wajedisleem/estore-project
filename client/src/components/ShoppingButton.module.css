@@ -1,0 +1,16 @@
+.btn-continue-shopping {
+  padding: 0.8rem 2rem;
+  transition: background-color 0.3s;
+  background-color: var(--clr-black);
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--clr-white);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.btn-continue-shopping:hover {
+  background-color: var(--clr-gray-darkest);
+}

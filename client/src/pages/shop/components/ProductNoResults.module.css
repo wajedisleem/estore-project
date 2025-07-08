@@ -1,0 +1,37 @@
+.product-no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem;
+  background-color: var(--clr-gray);
+  border-radius: 10px;
+}
+
+.product-no-results-image {
+  width: 12rem;
+}
+
+.product-no-results-text {
+  font-size: 1.5rem;
+  color: var(--clr-gray-dark);
+}
+
+.btn-clear-filters {
+  padding: 0.8rem 2rem;
+  transition: background-color 0.3s;
+  background-color: var(--clr-black);
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--clr-white);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+
+.btn-clear-filters:hover {
+  background-color: var(--clr-gray-darkest);
+}

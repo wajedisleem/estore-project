@@ -1,0 +1,13 @@
+.product-category {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  padding: 0 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

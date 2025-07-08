@@ -1,0 +1,28 @@
+.product-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.product-badge-offer {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
+
+.product-badge-new {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+}
+
+
+.product-badge-featured {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+}

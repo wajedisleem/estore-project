@@ -1,0 +1,23 @@
+.btn-menu {
+  display: none;
+  padding: 9px;
+  background-color: var(--clr-gray);
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-menu:hover {
+  background-color: var(--clr-gray-200);
+}
+
+.btn-menu-icon {
+  width: 22px;
+}
+
+@media (max-width: 480px) {
+.btn-menu {
+    display: block;
+  }
+}

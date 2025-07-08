@@ -1,0 +1,18 @@
+.special-offer-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.special-offer-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .special-offer-section,
+  .special-offer-small {
+    grid-template-columns: 1fr;
+  }
+}

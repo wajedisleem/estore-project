@@ -1,0 +1,15 @@
+.main-content {
+  padding-top: 75px; /* Same as the header height */
+}
+
+.page-container {
+  padding: 0 1rem;
+  min-height: calc(100vh - 75px - 60px);
+  padding: 3rem 0;
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 60px; /* Same as the mobile header height */
+  }
+}

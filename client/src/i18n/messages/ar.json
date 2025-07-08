@@ -1,0 +1,106 @@
+{
+  "Layout": {
+    "Title": "المتجر الإلكتروني",
+    "By": "واجد إسليم",
+    "Total": "الإجمالي",
+    "Copyrights": "جميع الحقوق محفوظة © 2025"
+  },
+  "Shared": {
+    "ContinueShopping": "مواصلة التسوق"
+  },
+  "Home": {
+    "Title": "الرئيسة",
+    "PageTitle": "مرحبًا بك في متجري الإلكتروني",
+    "PageSubTitle": "استمتع بتجربة تسوق فريدة من نوعها.",
+    "Loading": "جاري التحميل ...",
+    "NewArrivals": "المنتجات الجديدة",
+    "FeaturedProducts": "المنتجات المميزة"
+  },
+  "Shop": {
+    "Title": "المتجر",
+    "PageTitle": "صفحة المتجر",
+    "PageSubTitle": "استكشف مجموعتنا من المنتجات.",
+    "Filters": {
+      "SearchPlaceholder": "ابحث عن المنتجات ...",
+      "AllCategories": "جميع الفئات",
+      "SortBy": "ترتيب حسب",
+      "SortOptions": {
+        "Alphabetical": "ترتيب أبجدي",
+        "PriceLowToHigh": "السعر: من الأقل إلى الأعلى",
+        "PriceHighToLow": "السعر: من الأعلى إلى الأقل"
+      }
+    },
+    "NoProductsFound": "لم يتم العثور على منتجات لهذا البحث.",
+    "ClearFilters": "مسح الفلاتر"
+  },
+  "Product": {
+    "Title": "تفاصيل المنتج",
+    "Home": "الرئيسة",
+    "Shop": "المتجر",
+    "Reviews": "تقيم",
+    "RelatedProducts": "منتجات ذات صلة",
+    "AddToCart": "أضف إلى السلة",
+    "AddedToCart": "المنتج في السلة",
+    "Loading": "جاري تحميل تفاصيل المنتج ...",
+    "Currency": "د.ك",
+    "OnlyLeft": "متبقي {stock} فقط!",
+    "ItemsAvailable": "{stock} قطعة متوفرة",
+    "OutOfStock": "المنتج غير متوفر",
+    "Save": "خصم",
+    "New": "جديد",
+    "Featured": "مميز"
+  },
+  "About": {
+    "Title": "من نحن",
+    "SubTitle": "استمتع بتجربة تسوق فريدة من نوعها.",
+    "Vision": {
+      "Title": "رؤيتنا",
+      "Description": "تقديم منتجات عالية الجودة وخدمة عملاء استثنائية، مع ضمان أن تكون كل تجربة تسوق مريحة وممتعة وتفوق التوقعات."
+    },
+    "FAQ": {
+      "Title": "الأسئلة الشائعة"
+    },
+    "Contact": {
+      "Title": "تواصل معنا",
+      "Email": "البريد الإلكتروني",
+      "Phone": "الهاتف",
+      "Address": "العنوان"
+    }
+  },
+  "Cart": {
+    "Title": "سلة المشتريات",
+    "Empty": {
+      "Message": "سلة المشتريات فارغة."
+    },
+    "Summary": {
+      "Title": "ملخص الطلب",
+      "Subtotal": "المجموع الفرعي",
+      "Shipping": "الشحن",
+      "FreeShipping": "مجاني",
+      "Tax": "الضريبة",
+      "Total": "الإجمالي",
+      "PlaceOrder": "إتمام الطلب",
+      "PlacingOrder": "جاري إتمام الطلب ..."
+    }
+  },
+  "Confirmation": {
+    "Title": "تأكيد الطلب",
+    "Header": {
+      "Title": "شكرًا لطلبك !",
+      "Subtitle": "طلبك قيد المعالجة وسنقوم بإعلامك عند شحنه."
+    },
+    "OrderDetails": {
+      "OrderID": "رقم الطلب:",
+      "OrderDate": "تاريخ الطلب:",
+      "DeliveryDate": "تاريخ التوصيل:",
+      "PaymentMethod": "طريقة الدفع:",
+      "CreditCard": "بطاقة ائتمان",
+      "TotalAmount": "المبلغ الإجمالي:"
+    }
+  },
+  "NotFound": {
+    "Title": "صفحة غير موجودة",
+    "SubTitle": "عذراً، الصفحة التي تبحث عنها غير موجودة",
+    "ReturnHome": "العودة للصفحة الرئيسية"
+  }
+}

@@ -1,0 +1,11 @@
+.cart-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .cart-box {
+    flex-direction: column;
+  }
+}

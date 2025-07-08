@@ -1,0 +1,17 @@
+.product-breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--clr-gray-dark);
+}
+
+.product-breadcrumb-link {
+  color: var(--clr-gray-dark);
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.product-breadcrumb-link:hover {
+  color: var(--clr-gray-darkest);
+}

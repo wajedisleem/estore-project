@@ -1,0 +1,17 @@
+[
+  {
+    "EnTitle": "Home",
+    "ArTitle": "الرئيسية",
+    "Path": "/"
+  },
+  {
+    "EnTitle": "Shop",
+    "ArTitle": "المتجر",
+    "Path": "/shop"
+  },
+  {
+    "EnTitle": "About",
+    "ArTitle": "من نحن",
+    "Path": "/about"
+  }
+]
