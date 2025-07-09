@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const ENDPOINT = import.meta.env.VITE_API_URL + '/products/offer';
+const BASE_URL = import.meta.env.VITE_API_URL + '/products';
 
 const fetchOfferProducts = createAsyncThunk('products/fetchOfferProducts', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get(ENDPOINT);
+    const response = await axios.get(`${BASE_URL}/offer`);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.message);
