@@ -47,7 +47,24 @@ const productSchema = new Schema({
     type: Number,
     required: false,
     default: 0
+  },
+  offer: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  featured: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  new: {
+    type: Boolean,
+    required: false,
+    default: false
   }
+}, {
+  versionKey: false
 });
 
 const Product = model('Product', productSchema);

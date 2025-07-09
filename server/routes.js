@@ -9,6 +9,10 @@ router.get('/health', HomeController.health);
 router.get('/log', HomeController.log);
 router.get('/environment', HomeController.environment);
 
-router.get('/products', ProductController.list);
+router.get('/products/offer', ProductController.offer);
+router.get('/products/featured', ProductController.featured);
+router.get('/products/new', ProductController.new);
+
+router.get('/products', ProductController.search);
 router.get('/products/:id', ProductController.details);
 export default router;
