@@ -10,4 +10,5 @@ router.get('/log', HomeController.log);
 router.get('/environment', HomeController.environment);
 
 router.get('/products', ProductController.list);
+router.get('/products/:id', ProductController.details);
 export default router;
