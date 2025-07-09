@@ -3,9 +3,9 @@ import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_API_URL + '/products';
 
-const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
+const fetchProducts = createAsyncThunk('products/fetchProducts', async (filters, { rejectWithValue }) => {
   try {
-    const response = await axios.get(BASE_URL);
+    const response = await axios.get(`${BASE_URL}?q=${filters.search}&category=${filters.category}&sort=${filters.sort}`);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.message);
@@ -23,6 +23,24 @@ const productSearchSlice = createSlice({
     },
     loading: false,
     error: null
+  },
+  reducers: {
+    setSearchFilter: (state, action) => {
+      state.filters.search = action.payload;
+    },
+    setCategoryFilter: (state, action) => {
+      state.filters.category = action.payload;
+    },
+    setSortFilter: (state, action) => {
+      state.filters.sort = action.payload;
+    },
+    clearFilters: (state) => {
+      state.filters = {
+        search: '',
+        category: '',
+        sort: ''
+      };
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -42,4 +60,5 @@ const productSearchSlice = createSlice({
 });
 
 export { fetchProducts };
+export const { setSearchFilter, setCategoryFilter, setSortFilter, clearFilters } = productSearchSlice.actions;
 export default productSearchSlice.reducer;
