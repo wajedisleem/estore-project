@@ -24,7 +24,7 @@ const LargeOfferCard = ({ product }) => {
         <ProductButton product={product} />
       </div>
       <div className={styles['large-offer-card-image-box']}>
-        <img src={`${product.image}?w=200`} className={styles['large-offer-card-image']} alt={product[`${currentLanguage.code}_name`]} />
+        <img src={`${product.image}?w=350`} className={styles['large-offer-card-image']} alt={product[`${currentLanguage.code}_name`]} />
       </div>
     </div>
   );

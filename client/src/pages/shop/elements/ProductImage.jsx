@@ -6,7 +6,7 @@ const ProductImage = ({ product }) => {
   return (
     <div className={styles['product-image-box']}>
       <Link to={`/product/${product._id}`}>
-        <img src={`${product.image}?w=300`} className={styles['product-image']} alt={product.name} />
+        <img src={`${product.image}?w=350`} className={styles['product-image']} alt={product.name} />
       </Link>
       <ProductBadge product={product} />
     </div>
