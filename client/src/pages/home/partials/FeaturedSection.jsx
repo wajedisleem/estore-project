@@ -1,11 +1,17 @@
-import styles from './FeaturedSection.module.css';
-
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFeaturedProducts } from '../../../store/slices/featuredProductsSlice';
 import { ProductSection } from '../components/ProductSection';
 
+import styles from './FeaturedSection.module.css';
+
 const FeaturedSection = () => {
-  const { items } = useSelector((state) => state.products);
-  let products = items.filter((item) => item.featured);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.featuredProducts.items);
+
+  useEffect(() => {
+    dispatch(fetchFeaturedProducts());
+  }, [dispatch]);
 
   return (
     <section className={styles['featured-section']}>

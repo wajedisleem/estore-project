@@ -1,14 +1,22 @@
-import styles from './SpecialOfferSection.module.css';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchOfferProducts } from '../../../store/slices/offerProductsSlice';
 import { HomeLoading } from '../components/HomeLoading';
 import { LargeOfferCard } from '../components/LargeOfferCard';
 import { SmallOfferCard } from '../components/SmallOfferCard';
 
-const SpecialOfferSection = () => {
-  const items = useSelector((state) => state.products.items);
-  let products = items.filter((item) => item.offer);
+import styles from './SpecialOfferSection.module.css';
 
-  if (items.length === 0) {
+
+const SpecialOfferSection = () => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.featuredProducts.items);
+
+  useEffect(() => {
+    dispatch(fetchOfferProducts());
+  }, [dispatch]);
+
+  if (products.length === 0) {
     return <HomeLoading />;
   }
 
