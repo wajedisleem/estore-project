@@ -1,10 +1,16 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchNewProducts } from '../../../store/slices/newProductsSlice';
 import styles from './NewArrivalSection.module.css';
-import { useSelector } from 'react-redux';
 import { ProductSection } from '../components/ProductSection';
 
 const NewArrivalSection = () => {
-  const { items } = useSelector((state) => state.products);
-  let products = items.filter((item) => item.new).slice(0, 4);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.newProducts.items);
+
+  useEffect(() => {
+    dispatch(fetchNewProducts());
+  }, []);
 
   return (
     <section className={styles['new-arrival-section']}>
