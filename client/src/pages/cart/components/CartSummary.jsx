@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateOrderId, getOrderDate, getDeliveryDate } from '../../../utils/OrderInfo';
 import { clearCart } from '../../../store/slices/cartSlice';
-import { updateProductsStock } from '../../../store/slices/productSlice';
 
 const CartSummary = () => {
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ const CartSummary = () => {
         }
       });
 
-      dispatch(updateProductsStock(cart.items));
+      //dispatch(updateProductsStock(cart.items));
       dispatch(clearCart());
     }, 2000);
   };

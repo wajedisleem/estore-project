@@ -5,7 +5,7 @@ import { ProductLoading } from '../components/ProductLoading';
 import { ProductNoResults } from '../components/ProductNoResults';
 
 const ProductList = () => {
-  const { filteredItems, loading } = useSelector((state) => state.products);
+  const { products, loading } = useSelector((state) => state.productSearch);
 
   if (loading) {
     return (
@@ -17,13 +17,13 @@ const ProductList = () => {
     );
   }
 
-  if (filteredItems.length === 0) {
+  if (products.length === 0) {
     return <ProductNoResults />;
   }
 
   return (
     <div className={styles['product-list']}>
-      {filteredItems.map((product) => (
+      {products.map((product) => (
         <ProductCard key={product._id} product={product} />
       ))}
     </div>

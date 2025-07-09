@@ -1,15 +1,15 @@
 import styles from './FilterSearch.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useIntl } from 'react-intl';
-import { searchProducts } from '../../../store/slices/productSlice';
+//import { searchProducts } from '../../../store/slices/productSlice';
 
 const FilterSearch = () => {
   const intl = useIntl();
   const dispatch = useDispatch();
-  const search = useSelector((state) => state.products.filters.search);
+  const search = useSelector((state) => state.productSearch.filters.search);
 
   const handleSearch = (e) => {
-    dispatch(searchProducts(e.target.value));
+    //dispatch(searchProducts(e.target.value));
   };
 
   return (

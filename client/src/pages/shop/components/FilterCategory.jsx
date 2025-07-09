@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import categories from '../../../assets/categories.json';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterByCategory } from '../../../store/slices/productSlice';
 import { useLanguage } from '../../../i18n/TranslationProvider';
 import { FormattedMessage } from 'react-intl';
 
@@ -11,16 +10,16 @@ const FilterCategory = () => {
   const {category} = useParams();
 
   const dispatch = useDispatch();
-  const categoryFilter = useSelector((state) => state.products.filters.category);
+  const categoryFilter = useSelector((state) => state.productSearch.filters.category);
   const { currentLanguage } = useLanguage();
 
   const handleCategoryChange = (e) => {
-    dispatch(filterByCategory(e.target.value));
+    //dispatch(filterByCategory(e.target.value));
   };
 
   useEffect(() => {
     if (category) {
-      dispatch(filterByCategory(category));
+      //dispatch(filterByCategory(category));
     }
   }, [category, dispatch]);
 
