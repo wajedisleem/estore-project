@@ -5,7 +5,7 @@ const BASE_URL = import.meta.env.VITE_API_URL + '/products';
 
 const fetchProducts = createAsyncThunk('products/fetchProducts', async (filters, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`${BASE_URL}?q=${filters.search}&category=${filters.category}&sort=${filters.sort}`);
+    const response = await axios.get(`${BASE_URL}?search=${filters.search}&category=${filters.category}&sort=${filters.sort}`);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.message);
