@@ -1,4 +1,4 @@
-import {Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '../../store/slices/productSearchSlice';
 
@@ -12,10 +12,11 @@ import styles from './ShopPage.module.css';
 
 const ShopPage = () => {
   const dispatch = useDispatch();
+  const { filters } = useSelector((state) => state.productSearch);
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    dispatch(fetchProducts(filters));
+  }, [dispatch, filters]);
 
   return (
     <Fragment>

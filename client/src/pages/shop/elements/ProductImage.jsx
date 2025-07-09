@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import styles from './ProductImage.module.css';
 import { ProductBadge } from './ProductBadge';
+
+import styles from './ProductImage.module.css';
 
 const ProductImage = ({ product }) => {
   return (

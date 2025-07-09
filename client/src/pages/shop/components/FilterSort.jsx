@@ -1,14 +1,15 @@
-import styles from './FilterSort.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-//import { sortProducts } from '../../../store/slices/productSlice';
 import { FormattedMessage } from 'react-intl';
+import { setSortFilter } from '../../../store/slices/productSearchSlice';
+
+import styles from './FilterSort.module.css';
 
 const FilterSort = () => {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.productSearch.filters.sort);
 
   const handleSortChange = (e) => {
-    //dispatch(sortProducts(e.target.value));
+    dispatch(setSortFilter(e.target.value));
   };
 
   return (

@@ -1,10 +1,12 @@
-import styles from './FilterCategory.module.css';
 import { useEffect } from 'react';
-import categories from '../../../assets/categories.json';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLanguage } from '../../../i18n/TranslationProvider';
 import { FormattedMessage } from 'react-intl';
+import { useLanguage } from '../../../i18n/TranslationProvider';
+import { setCategoryFilter } from '../../../store/slices/productSearchSlice';
+import categories from '../../../assets/categories.json';
+
+import styles from './FilterCategory.module.css';
 
 const FilterCategory = () => {
   const {category} = useParams();
@@ -14,12 +16,12 @@ const FilterCategory = () => {
   const { currentLanguage } = useLanguage();
 
   const handleCategoryChange = (e) => {
-    //dispatch(filterByCategory(e.target.value));
+    dispatch(setCategoryFilter(e.target.value));
   };
 
   useEffect(() => {
     if (category) {
-      //dispatch(filterByCategory(category));
+      dispatch(setCategoryFilter(category));
     }
   }, [category, dispatch]);
 

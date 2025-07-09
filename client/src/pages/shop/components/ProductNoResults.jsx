@@ -1,12 +1,14 @@
-import styles from './ProductNoResults.module.css';
 import { useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
+import { clearFilters } from '../../../store/slices/productSearchSlice';
+
+import styles from './ProductNoResults.module.css';
 
 const ProductNoResults = () => {
   const dispatch = useDispatch();
 
   const handelClearFilters = () => {
-    //dispatch(clearFilters());
+    dispatch(clearFilters());
   };
 
   return (
