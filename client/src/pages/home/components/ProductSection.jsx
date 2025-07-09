@@ -11,9 +11,9 @@ const ProductSection = ({ title, products }) => {
       </h2>
       <div className={styles['product-list']}>
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
-        {products.length === 0 && Array.from({ length: 4}).map((_, index) => <ProductLoading key={index} />)}
+        {products.length === 0 && Array.from({ length: 4 }).map((_, index) => <ProductLoading key={index} />)}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const ProductInfo = ({ product }) => {
 
   return (
     <div className={styles['product-info']}>
-      <Link to={`/product/${product.id}`} className={styles['product-link']}>
+      <Link to={`/product/${product._id}`} className={styles['product-link']}>
         <h3 className={styles['product-name']}>{product[`${currentLanguage.code}_name`]}</h3>
       </Link>
       <div className={styles['product-category-price']}>

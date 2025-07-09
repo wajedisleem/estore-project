@@ -16,7 +16,7 @@ const SmallOfferCard = ({ product, num }) => {
           <FormattedMessage id="Product.Save" />
           <span>25%</span>
         </Badge>
-        <Link to={`/product/${product.id}`} className={styles['small-offer-card-link']}>
+        <Link to={`/product/${product._id}`} className={styles['small-offer-card-link']}>
           <h2 className={styles['small-offer-card-title']}>{product[`${currentLanguage.code}_name`]}</h2>
         </Link>
         <ProductPrice price={product.price} />

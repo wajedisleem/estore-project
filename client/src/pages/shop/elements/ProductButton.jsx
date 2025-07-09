@@ -6,16 +6,16 @@ import { FormattedMessage } from 'react-intl';
 const ProductButton = ({ product }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const cartProduct = cart.items.filter((item) => item.id === product.id)[0];
+  const cartProduct = cart.items.filter((item) => item.id === product._id)[0];
 
   const handleAddToCart = () => {
     dispatch(addToCart({ product, quantity: 1 }));
   };
 
   const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product.id));
-  }
-  
+    dispatch(removeFromCart(product._id));
+  };
+
   if (product.stock === 0) {
     return (
       <span className={styles['out-of-stock']}>

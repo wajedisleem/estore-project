@@ -7,7 +7,7 @@ import { addToCart, removeFromCart, updateQuantity } from '../../../store/slices
 const ProductAddToCart = ({ product }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const cartProduct = cart.items.filter((item) => item.id === product.id)[0];
+  const cartProduct = cart.items.filter((item) => item.id === product._id)[0];
 
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
@@ -16,19 +16,19 @@ const ProductAddToCart = ({ product }) => {
 
   const handleQuantityDecrement = () => {
     if (quantity <= 1) {
-      dispatch(removeFromCart(product.id));
+      dispatch(removeFromCart(product._id));
       return;
     }
     setQuantity(quantity - 1);
     if (cartProduct) {
-      dispatch(updateQuantity({ id: product.id, quantity: quantity - 1 }));
+      dispatch(updateQuantity({ id: product._id, quantity: quantity - 1 }));
     }
   };
 
   const handleQuantityIncrement = () => {
     if (quantity < product.stock) {
       setQuantity(quantity + 1);
-      dispatch(updateQuantity({ id: product.id, quantity: quantity + 1 }));
+      dispatch(updateQuantity({ id: product._id, quantity: quantity + 1 }));
     }
   };
 
@@ -37,7 +37,7 @@ const ProductAddToCart = ({ product }) => {
   };
 
   const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product.id));
+    dispatch(removeFromCart(product._id));
   };
 
   if (product.stock === 0) {

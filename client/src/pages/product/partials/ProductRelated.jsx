@@ -4,7 +4,7 @@ import { ProductSection } from '../../home/components/ProductSection';
 
 const ProductRelated = ({ product }) => {
   const { items } = useSelector((state) => state.products);
-  let products = items.filter((item) => item.en_category === product.en_category && item.id !== product.id).slice(0, 4);
+  let products = items.filter((item) => item.en_category === product.en_category && item.id !== product._id).slice(0, 4);
 
   return (
     <div className={styles['product-related']}>
