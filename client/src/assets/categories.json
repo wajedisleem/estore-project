@@ -3,42 +3,42 @@
     "id": 1,
     "en_name": "Shirts",
     "ar_name": "قمصان",
-    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c"
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=160"
   },
   {
     "id": 2,
     "en_name": "Pants",
     "ar_name": "بناطيل",
-    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80"
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=160"
   },
   {
     "id": 3,
     "en_name": "Sweaters",
     "ar_name": "سترات",
-    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633"
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=160"
   },
   {
     "id": 4,
     "en_name": "Jackets",
     "ar_name": "جاكيتات",
-    "image": "https://images.unsplash.com/photo-1548126032-079a0fb0099d"
+    "image": "https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=160"
   },
   {
     "id": 5,
     "en_name": "Shoes",
     "ar_name": "أحذية",
-    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86"
+    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=160"
   },
   {
     "id": 6,
     "en_name": "Accessories",
     "ar_name": "إكسسوارات",
-    "image": "https://images.unsplash.com/photo-1569388330292-79cc1ec67270"
+    "image": "https://images.unsplash.com/photo-1569388330292-79cc1ec67270?w=160"
   },
   {
     "id": 7,
     "en_name": "Dresses",
     "ar_name": "فساتين",
-    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8"
+    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=160"
   }
 ]
