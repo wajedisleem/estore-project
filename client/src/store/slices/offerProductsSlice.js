@@ -1,0 +1,40 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const ENDPOINT = import.meta.env.VITE_API_URL + '/products/offer';
+
+const fetchOfferProducts = createAsyncThunk('products/fetchOfferProducts', async (_, { rejectWithValue }) => {
+  try {
+    const response = await axios.get(ENDPOINT);
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(error.message);
+  }
+});
+
+const offerProductsSlice = createSlice({
+  name: 'offer',
+  initialState: {
+    items: [],
+    loading: false,
+    error: null
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchOfferProducts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchOfferProducts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchOfferProducts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
+  }
+});
+
+export { fetchOfferProducts };
+export default offerProductsSlice.reducer;
