@@ -15,4 +15,5 @@ router.get('/products/featured', ProductController.featured);
 
 router.get('/products', ProductController.search);
 router.get('/products/:id', ProductController.details);
+router.get('/products/:id/related', ProductController.related);
 export default router;
