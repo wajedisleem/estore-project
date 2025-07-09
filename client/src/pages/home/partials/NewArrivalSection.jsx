@@ -7,7 +7,7 @@ import styles from './NewArrivalSection.module.css';
 
 const NewArrivalSection = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.newProducts.items);
+  const products = useSelector((state) => state.newProducts.products);
 
   useEffect(() => {
     dispatch(fetchNewProducts());

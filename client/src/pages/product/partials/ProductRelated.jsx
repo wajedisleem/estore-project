@@ -7,7 +7,7 @@ import styles from './ProductRelated.module.css';
 
 const ProductRelated = ({ productId }) => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.relatedProducts.items);
+  const products = useSelector((state) => state.relatedProducts.products);
 
   useEffect(() => {
     dispatch(fetchRelatedProducts(productId));
