@@ -57,6 +57,7 @@
   display: block;
   line-height: 1.6;
   font-style: normal;
+  direction: ltr;
 }
 
 .contact-card-link:hover {
