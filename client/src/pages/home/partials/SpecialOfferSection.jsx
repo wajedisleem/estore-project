@@ -10,7 +10,7 @@ import styles from './SpecialOfferSection.module.css';
 
 const SpecialOfferSection = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.featuredProducts.items);
+  const products = useSelector((state) => state.offerProducts.items);
 
   useEffect(() => {
     dispatch(fetchOfferProducts());
