@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import HomeController from './controllers/home.controller.js';
 import ProductController from './controllers/product.controller.js';
+import CartController from './controllers/cart.controller.js';
 
 const router = Router();
 
@@ -16,5 +17,10 @@ router.get('/products/featured', ProductController.featured);
 router.get('/products', ProductController.search);
 router.get('/products/:id', ProductController.details);
 router.get('/products/:id/related', ProductController.related);
+
+router.get('/cart', CartController.get);
+router.post('/cart', CartController.add);
+router.put('/cart/:id', CartController.update);
+router.delete('/cart/:id', CartController.remove);
 
 export default router;
