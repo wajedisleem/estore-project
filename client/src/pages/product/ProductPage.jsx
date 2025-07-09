@@ -1,7 +1,7 @@
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import styles from './ProductPage.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProductDetails } from '../../store/slices/productDetailsSlice';
 
 import { PageContainer } from '../../components/PageContainer';
 import { FormattedPageTitle } from '../../components/PageTitle';
@@ -10,37 +10,39 @@ import { ProductInfo } from './partials/ProductInfo';
 import { ProductRelated } from './partials/ProductRelated';
 import { ProductLoading } from './partials/ProductLoading';
 
+import styles from './ProductPage.module.css';
+
 const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const products = useSelector((state) => state.products.items);
-  const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
+  const { product, loading, error } = useSelector((state) => state.productDetails);
 
   useEffect(() => {
-    if (products && products.length > 0) {
-      const foundProduct = products.find((p) => p.id === parseInt(id));
-      if (foundProduct) {
-        setProduct(foundProduct);
-      } else {
-        navigate('/not-found');
-      }
+    if (id) {
+      dispatch(fetchProductDetails(id));
     }
-  }, [id, products, navigate]);
+  }, [id, dispatch]);
+
+  useEffect(() => {
+    if (error) {
+      navigate('/not-found');
+    }
+  }, [error, navigate]);
 
   return (
     <Fragment>
       <FormattedPageTitle id="Product.Title" />
       <PageContainer>
-        {product ? (
+        {(loading || !product) && <ProductLoading />}
+        {product && !loading && !error && (
           <div className={styles['product-details-page']}>
             <div className={styles['product-details-box']}>
               <ProductImage product={product} />
               <ProductInfo product={product} />
             </div>
-            <ProductRelated product={product} />
+            <ProductRelated productId={product._id} />
           </div>
-        ) : (
-          <ProductLoading />
         )}
       </PageContainer>
     </Fragment>

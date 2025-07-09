@@ -1,10 +1,17 @@
-import styles from './ProductRelated.module.css';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchRelatedProducts } from '../../../store/slices/relatedProductsSlice';
 import { ProductSection } from '../../home/components/ProductSection';
 
-const ProductRelated = ({ product }) => {
-  const { items } = useSelector((state) => state.products);
-  let products = items.filter((item) => item.en_category === product.en_category && item.id !== product._id).slice(0, 4);
+import styles from './ProductRelated.module.css';
+
+const ProductRelated = ({ productId }) => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.relatedProducts.items);
+
+  useEffect(() => {
+    dispatch(fetchRelatedProducts(productId));
+  }, [dispatch, productId]);
 
   return (
     <div className={styles['product-related']}>
