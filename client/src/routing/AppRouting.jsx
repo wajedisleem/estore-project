@@ -14,15 +14,6 @@ import { NotFoundPage } from '../pages/not-found/NotFoundPage';
 const AppRouting = () => {
   const { pathname } = useLocation();
 
-  const dispatch = useDispatch();
-  const { items } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    if (items.length === 0) {
-      dispatch(fetchProducts());
-    }
-  }, []);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
