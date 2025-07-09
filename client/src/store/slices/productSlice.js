@@ -6,10 +6,6 @@ const BASE = import.meta.env.VITE_API_URL + '/products';
 const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
   try {
     const response = await axios.get(BASE);
-
-    // Simulate loading time of 2 seconds
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     return response.data;
   } catch (error) {
     return rejectWithValue(error.message);
