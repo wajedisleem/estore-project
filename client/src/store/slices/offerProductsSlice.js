@@ -15,7 +15,7 @@ const fetchOfferProducts = createAsyncThunk('products/fetchOfferProducts', async
 const offerProductsSlice = createSlice({
   name: 'offer',
   initialState: {
-    items: [],
+    products: [],
     loading: false,
     error: null
   },
@@ -27,7 +27,7 @@ const offerProductsSlice = createSlice({
       })
       .addCase(fetchOfferProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.products = action.payload;
       })
       .addCase(fetchOfferProducts.rejected, (state, action) => {
         state.loading = false;

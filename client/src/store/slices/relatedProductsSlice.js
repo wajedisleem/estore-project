@@ -15,9 +15,9 @@ const fetchRelatedProducts = createAsyncThunk('products/fetchRelatedProducts', a
 const relatedProductsSlice = createSlice({
   name: 'relatedProducts',
   initialState: {
-    items: [],
+    products: [],
     loading: false,
-    error: null,
+    error: null
   },
   extraReducers: (builder) => {
     builder
@@ -27,7 +27,7 @@ const relatedProductsSlice = createSlice({
       })
       .addCase(fetchRelatedProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.products = action.payload;
       })
       .addCase(fetchRelatedProducts.rejected, (state, action) => {
         state.loading = false;
