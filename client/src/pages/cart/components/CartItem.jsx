@@ -13,18 +13,18 @@ const CartItem = ({ item }) => {
 
   const handleQuantityDecrement = (item) => {
     if (item.quantity <= 1) {
-      dispatch(removeFromCart(item.id));
+      dispatch(removeFromCart(item._id));
       return;
     }
 
-    dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }));
+    dispatch(updateQuantity({ id: item._id, quantity: item.quantity - 1 }));
   };
 
   const handleQuantityIncrement = (item) => {
     if (item.quantity >= item.stock) {
       return;
     }
-    dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }));
+    dispatch(updateQuantity({ id: item._id, quantity: item.quantity + 1 }));
   };
 
   const handleRemoveItem = (itemId) => {
@@ -37,7 +37,7 @@ const CartItem = ({ item }) => {
         <img src={item.image} className={styles['cart-item-image']} alt={item.name} />
       </div>
       <div className={styles['cart-item-info']}>
-        <Link to={`/product/${item.id}`} className={styles['cart-item-name']}>
+        <Link to={`/product/${item._id}`} className={styles['cart-item-name']}>
           <h2>{item[`${currentLanguage.code}_name`]}</h2>
         </Link>
         <div className={styles['cart-item-info-details']}>
@@ -60,7 +60,7 @@ const CartItem = ({ item }) => {
                 +
               </button>
             </div>
-            <button className={styles['btn-cart-item-remove']} onClick={() => handleRemoveItem(item.id)} aria-label={<FormattedMessage id="Cart.Item.Remove" />}>
+            <button className={styles['btn-cart-item-remove']} onClick={() => handleRemoveItem(item._id)} aria-label={<FormattedMessage id="Cart.Item.Remove" />}>
               <TrushIcon />
             </button>
           </div>

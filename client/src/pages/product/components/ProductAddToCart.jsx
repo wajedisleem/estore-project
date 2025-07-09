@@ -7,7 +7,7 @@ import { addToCart, removeFromCart, updateQuantity } from '../../../store/slices
 const ProductAddToCart = ({ product }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const cartProduct = cart.items.filter((item) => item.id === product._id)[0];
+  const cartProduct = cart.items.filter((item) => item._id === product._id)[0];
 
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {

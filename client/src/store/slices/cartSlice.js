@@ -24,7 +24,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const { product, quantity } = action.payload;
-      const item = state.items.filter((item) => item.id === 100)[0];
+      const item = state.items.filter((item) => item._id === 100)[0];
 
       if (item) {
         item.quantity += quantity;
@@ -37,12 +37,12 @@ const cartSlice = createSlice({
       updateCartStats(state);
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter((item) => item._id !== action.payload);
       updateCartStats(state);
     },
     updateQuantity: (state, action) => {
       const { id, quantity } = action.payload;
-      const item = state.items.filter((item) => item.id === id)[0];
+      const item = state.items.filter((item) => item._id === id)[0];
       if (item) {
         item.quantity = quantity;
         item.totalPrice = parseFloat((item.price * quantity).toFixed(2));
