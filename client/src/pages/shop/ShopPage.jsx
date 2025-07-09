@@ -9,14 +9,16 @@ import { FilterSection } from './partials/FilterSection';
 import { ProductList } from './partials/ProductList';
 
 import styles from './ShopPage.module.css';
+import { useLanguage } from '../../i18n/TranslationProvider';
 
 const ShopPage = () => {
+  const { currentLanguage } = useLanguage();
   const dispatch = useDispatch();
   const { filters } = useSelector((state) => state.productSearch);
 
   useEffect(() => {
     dispatch(fetchProducts(filters));
-  }, [dispatch, filters]);
+  }, [dispatch, filters, currentLanguage]);
 
   return (
     <Fragment>
