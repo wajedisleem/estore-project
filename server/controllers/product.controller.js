@@ -6,13 +6,13 @@ class ProductController {
     return res.status(200).json(products);
   }
 
-  static async featured(req, res) {
-    const products = await Product.find({ featured: true });
+  static async new(req, res) {
+    const products = await Product.find({ new: true });
     return res.status(200).json(products);
   }
 
-  static async new(req, res) {
-    const products = await Product.find({ new: true });
+  static async featured(req, res) {
+    const products = await Product.find({ featured: true });
     return res.status(200).json(products);
   }
 
