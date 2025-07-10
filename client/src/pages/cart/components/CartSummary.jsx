@@ -29,10 +29,10 @@ const CartSummary = () => {
           dispatch(clearCart());
           navigate('/confirmation', {
             state: {
-              orderId: response.data.orderId,
+              orderId: response.data.order_id,
               orderDate: getOrderDate(),
               deliveryDate: getDeliveryDate(),
-              totalPrice: response.data.totalPrice
+              totalAmount: response.data.total_amount
             }
           });
         }

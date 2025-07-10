@@ -10,7 +10,7 @@ const ShoppingCart = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const cart = useSelector((state) => state.cart);
+  const { totalItems, totalAmount } = useSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -20,7 +20,7 @@ const ShoppingCart = () => {
     <Link to="/cart" className={`${styles['header-cart']} ${location.pathname === '/cart' && styles['header-cart-active']}`}>
       <div className={styles['header-cart-count']}>
         <img src="/images/icons/cart.svg" className={styles['header-cart-count-icon']} alt="Shopping Cart" />
-        <span className={styles['header-cart-count-badge']}>{cart.totalItems}</span>
+        <span className={styles['header-cart-count-badge']}>{totalItems}</span>
       </div>
       <div className={styles['header-cart-total']}>
         <span className={styles['header-cart-total-text']}>
@@ -28,7 +28,7 @@ const ShoppingCart = () => {
         </span>
         <span className={styles['header-cart-total-price']}>
           <FormattedMessage id="Product.Currency" />
-          <span>{cart.totalPrice}</span>
+          <span>{totalAmount}</span>
         </span>
       </div>
     </Link>

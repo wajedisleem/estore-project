@@ -41,8 +41,8 @@ class OrderController {
       return res.status(200).json({
         success: true,
         message: 'Order placed successfully',
-        orderId: order._id,
-        totalAmount: total_amount
+        order_id: order._id,
+        total_amount: total_amount
       });
     } catch (error) {
       console.error('Error placing order:', error);
