@@ -12,7 +12,7 @@ router.get('/health', HomeController.health);
 router.get('/log', HomeController.log);
 router.get('/environment', HomeController.environment);
 
-router.get('/login', AuthController.login);
+router.post('/login', AuthController.login);
 router.get('/verify', AuthController.verify);
 
 router.get('/products/offer', ProductController.offer);
