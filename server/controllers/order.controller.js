@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 import Product from '../database/schemas/product.schema.js';
+import Cart from '../database/schemas/cart.schema.js';
+import CartProduct from '../database/schemas/cart-product.schema.js';
 import Order from '../database/schemas/order.schema.js';
 
 class OrderController {
@@ -36,6 +38,11 @@ class OrderController {
       });
       await order.save();
 
+      const { cartId } = req.cookies;
+      if (cartId && mongoose.Types.ObjectId.isValid(cartId)) {
+        await Cart.deleteOne({ _id: cartId });
+        await CartProduct.deleteMany({ cart: cartId });
+      }
       res.clearCookie('cartId');
 
       return res.status(200).json({
