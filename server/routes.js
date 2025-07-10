@@ -23,4 +23,6 @@ router.post('/cart', CartController.add);
 router.put('/cart/:productId', CartController.update);
 router.delete('/cart/:productId', CartController.remove);
 
+router.post('/order', OrderController.place);
+
 export default router;
