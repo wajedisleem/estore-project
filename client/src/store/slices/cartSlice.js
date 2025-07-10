@@ -45,7 +45,7 @@ const updateCartStats = (state) => {
   state.subTotal = parseFloat(subTotal.toFixed(2));
   state.shipping = subTotal === 0 || subTotal >= 100 ? 0 : 9.99;
   state.tax = parseFloat(((subTotal + state.shipping) * 0.05).toFixed(2));
-  state.totalPrice = parseFloat((subTotal + state.shipping + state.tax).toFixed(2));
+  state.totalAmount = parseFloat((subTotal + state.shipping + state.tax).toFixed(2));
 };
 
 const initialState = {
@@ -56,7 +56,7 @@ const initialState = {
   subTotal: 0,
   shipping: 0,
   tax: 0,
-  totalPrice: 0
+  totalAmount: 0
 };
 
 const cartSlice = createSlice({

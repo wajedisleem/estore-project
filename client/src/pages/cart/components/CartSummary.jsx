@@ -1,40 +1,48 @@
 import { useState } from 'react';
-import styles from './CartSummary.module.css';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { generateOrderId, getOrderDate, getDeliveryDate } from '../../../utils/OrderInfo';
+import { getOrderDate, getDeliveryDate } from '../../../utils/OrderInfo';
 import { clearCart } from '../../../store/slices/cartSlice';
+
+import styles from './CartSummary.module.css';
 
 const CartSummary = () => {
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
-  const { totalItems, subTotal, shipping, tax, totalPrice } = useSelector((state) => state.cart);
+
+  const { items, subTotal, shipping, tax, totalAmount } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(false);
 
   const handlePlaceOrderClick = () => {
-    if (totalItems === 0) {
+    if (items.length === 0) {
       return;
     }
 
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-
-      navigate('/confirmation', {
-        state: {
-          orderId: generateOrderId(),
-          orderDate: getOrderDate(),
-          deliveryDate: getDeliveryDate(),
-          totalAmount: totalPrice
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/order`, { products: items })
+      .then((response) => {
+        if (response.data.success) {
+          dispatch(clearCart());
+          navigate('/confirmation', {
+            state: {
+              orderId: response.data.orderId,
+              orderDate: getOrderDate(),
+              deliveryDate: getDeliveryDate(),
+              totalPrice: response.data.totalPrice
+            }
+          });
         }
+      })
+      .catch((error) => {
+        console.error('Error placing order:', error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-
-      //dispatch(updateProductsStock(cart.items));
-      dispatch(clearCart());
-    }, 2000);
   };
 
   return (
@@ -96,7 +104,7 @@ const CartSummary = () => {
           <span>
             <FormattedMessage id="Product.Currency" />
           </span>
-          <span>{totalPrice}</span>
+          <span>{totalAmount}</span>
         </span>
       </div>
       <a onClick={handlePlaceOrderClick} className={styles['btn-place-order']}>

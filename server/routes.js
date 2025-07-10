@@ -2,6 +2,7 @@ import { Router } from 'express';
 import HomeController from './controllers/home.controller.js';
 import ProductController from './controllers/product.controller.js';
 import CartController from './controllers/cart.controller.js';
+import OrderController from './controllers/order.controller.js';
 
 const router = Router();
 
