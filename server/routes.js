@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import HomeController from './controllers/home.controller.js';
+import AuthController from './controllers/auth.controller.js';
 import ProductController from './controllers/product.controller.js';
 import CartController from './controllers/cart.controller.js';
 import OrderController from './controllers/order.controller.js';
@@ -10,6 +11,9 @@ router.get('/', HomeController.index);
 router.get('/health', HomeController.health);
 router.get('/log', HomeController.log);
 router.get('/environment', HomeController.environment);
+
+router.get('/login', AuthController.login);
+router.get('/verify', AuthController.verify);
 
 router.get('/products/offer', ProductController.offer);
 router.get('/products/new', ProductController.new);
