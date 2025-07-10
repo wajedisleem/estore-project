@@ -5,11 +5,12 @@ import styles from './CartPage.module.css';
 import { useSelector } from 'react-redux';
 import { PageContainer } from '../../components/PageContainer';
 import { FormattedPageTitle } from '../../components/PageTitle';
+import { CartLoading } from './partials/CartLoading';
 import { CartEmpty } from './partials/CartEmpty';
 import { CartContent } from './partials/CartContent';
 
 const CartPage = () => {
-  const cart = useSelector((state) => state.cart);
+  const { totalItems, loading } = useSelector((state) => state.cart);
 
   return (
     <Fragment>
@@ -19,7 +20,9 @@ const CartPage = () => {
           <h1 className={styles['cart-title']}>
             <FormattedMessage id="Cart.Title" />
           </h1>
-          {cart.totalItems !== 0 ? <CartContent /> : <CartEmpty />}
+          {loading && <CartLoading />}
+          {!loading && totalItems === 0 && <CartEmpty />}
+          {!loading && totalItems > 0 && <CartContent />}
         </div>
       </PageContainer>
     </Fragment>

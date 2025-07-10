@@ -3,10 +3,11 @@ import styles from './CartItems.module.css';
 import { CartItem } from './CartItem';
 
 const CartItems = () => {
-  const cart = useSelector((state) => state.cart);
+  const { items } = useSelector((state) => state.cart);
+
   return (
     <div className={styles['cart-items']}>
-      {cart.items.map((item) => (
+      {items.map((item) => (
         <CartItem key={item._id} item={item} />
       ))}
     </div>

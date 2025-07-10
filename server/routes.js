@@ -20,7 +20,7 @@ router.get('/products/:id/related', ProductController.related);
 
 router.get('/cart', CartController.get);
 router.post('/cart', CartController.add);
-router.put('/cart/:id', CartController.update);
-router.delete('/cart/:id', CartController.remove);
+router.put('/cart/:productId', CartController.update);
+router.delete('/cart/:productId', CartController.remove);
 
 export default router;

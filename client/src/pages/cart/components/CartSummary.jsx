@@ -10,12 +10,12 @@ const CartSummary = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const { totalItems, subTotal, shipping, tax, totalPrice } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(false);
 
   const handlePlaceOrderClick = () => {
-    if (cart.totalItems === 0) {
+    if (totalItems === 0) {
       return;
     }
 
@@ -28,7 +28,7 @@ const CartSummary = () => {
           orderId: generateOrderId(),
           orderDate: getOrderDate(),
           deliveryDate: getDeliveryDate(),
-          totalAmount: cart.totalPrice
+          totalAmount: totalPrice
         }
       });
 
@@ -51,7 +51,7 @@ const CartSummary = () => {
             <span>
               <FormattedMessage id="Product.Currency" />
             </span>
-            <span>{cart.subTotal}</span>
+            <span>{subTotal}</span>
           </span>
         </div>
         <div className={styles['cart-summary-row']}>
@@ -59,7 +59,7 @@ const CartSummary = () => {
             <FormattedMessage id="Cart.Summary.Shipping" />
           </span>
           <span className={styles['cart-summary-row-amount']}>
-            {cart.shipping === 0 ? (
+            {shipping === 0 ? (
               <span className={styles['cart-summary-free-shipping']}>
                 <FormattedMessage id="Cart.Summary.FreeShipping" />
               </span>
@@ -68,7 +68,7 @@ const CartSummary = () => {
                 <span>
                   <FormattedMessage id="Product.Currency" />
                 </span>
-                <span>{cart.shipping}</span>
+                <span>{shipping}</span>
               </>
             )}
           </span>
@@ -82,7 +82,7 @@ const CartSummary = () => {
             <span>
               <FormattedMessage id="Product.Currency" />
             </span>
-            <span>{cart.tax}</span>
+            <span>{tax}</span>
           </span>
         </div>
         <hr className={styles['cart-summary-divider']} />
@@ -96,7 +96,7 @@ const CartSummary = () => {
           <span>
             <FormattedMessage id="Product.Currency" />
           </span>
-          <span>{cart.totalPrice}</span>
+          <span>{totalPrice}</span>
         </span>
       </div>
       <a onClick={handlePlaceOrderClick} className={styles['btn-place-order']}>

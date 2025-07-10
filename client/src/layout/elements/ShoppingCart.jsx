@@ -1,11 +1,20 @@
-import styles from './ShoppingCart.module.css';
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
+import { fetchCart } from '../../store/slices/cartSlice';
+
+import styles from './ShoppingCart.module.css';
 
 const ShoppingCart = () => {
-  const cart = useSelector((state) => state.cart);
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [dispatch]);
 
   return (
     <Link to="/cart" className={`${styles['header-cart']} ${location.pathname === '/cart' && styles['header-cart-active']}`}>

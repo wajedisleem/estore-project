@@ -1,6 +1,6 @@
 import styles from './ProductButton.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../../../store/slices/cartSlice';
+import { addProductToCart, removeProductFromCart } from '../../../store/slices/cartSlice';
 import { FormattedMessage } from 'react-intl';
 
 const ProductButton = ({ product }) => {
@@ -9,11 +9,11 @@ const ProductButton = ({ product }) => {
   const cartProduct = cart.items.filter((item) => item._id === product._id)[0];
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ product, quantity: 1 }));
+    dispatch(addProductToCart({ productId: product._id }));
   };
 
   const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product._id));
+    dispatch(removeProductFromCart(product._id));
   };
 
   if (product.stock === 0) {

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import styles from './ProductAddToCart.module.css';
-import { addToCart, removeFromCart, updateQuantity } from '../../../store/slices/cartSlice';
+import { addProductToCart, removeProductFromCart, updateProductInCart } from '../../../store/slices/cartSlice';
 
 const ProductAddToCart = ({ product }) => {
   const dispatch = useDispatch();
@@ -16,28 +16,28 @@ const ProductAddToCart = ({ product }) => {
 
   const handleQuantityDecrement = () => {
     if (quantity <= 1) {
-      dispatch(removeFromCart(product._id));
+      dispatch(removeProductFromCart(product._id));
       return;
     }
     setQuantity(quantity - 1);
     if (cartProduct) {
-      dispatch(updateQuantity({ id: product._id, quantity: quantity - 1 }));
+      dispatch(updateProductInCart({ productId: product._id, quantity: quantity - 1 }));
     }
   };
 
   const handleQuantityIncrement = () => {
     if (quantity < product.stock) {
       setQuantity(quantity + 1);
-      dispatch(updateQuantity({ id: product._id, quantity: quantity + 1 }));
+      dispatch(updateProductInCart({ productId: product._id, quantity: quantity + 1 }));
     }
   };
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ product, quantity }));
+    dispatch(addProductToCart({ productId: product._id, quantity }));
   };
 
   const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product._id));
+    dispatch(removeProductFromCart(product._id));
   };
 
   if (product.stock === 0) {

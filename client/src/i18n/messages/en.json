@@ -69,6 +69,7 @@
   },
   "Cart": {
     "Title": "Shopping Cart",
+    "Loading": "Loading cart items ...",
     "Empty": {
       "Message": "Your cart is empty."
     },
