@@ -14,7 +14,7 @@ class CartController {
 
           let items = products.map((item) => {
             return {
-              _id: item.product._id,
+              product_id: item.product._id,
               en_name: item.product.en_name,
               ar_name: item.product.ar_name,
               en_category: item.product.en_category,
@@ -85,7 +85,7 @@ class CartController {
       await cartProduct.save();
 
       let item = {
-        _id: productId,
+        product_id: productId,
         en_name: product.en_name,
         ar_name: product.ar_name,
         en_category: product.en_category,

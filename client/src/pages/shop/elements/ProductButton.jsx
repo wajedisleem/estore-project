@@ -5,8 +5,8 @@ import { FormattedMessage } from 'react-intl';
 
 const ProductButton = ({ product }) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-  const cartProduct = cart.items.filter((item) => item._id === product._id)[0];
+  const { items } = useSelector((state) => state.cart);
+  const cartProduct = items.find((item) => item.product_id === product._id);
 
   const handleAddToCart = () => {
     dispatch(addProductToCart({ productId: product._id }));

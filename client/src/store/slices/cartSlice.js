@@ -91,14 +91,14 @@ const cartSlice = createSlice({
       })
       .addCase(updateProductInCart.fulfilled, (state, action) => {
         if (action.payload.success) {
-          state.items.filter((item) => item._id === action.payload.productId)[0].quantity = action.payload.quantity;
+          state.items.filter((item) => item.product_id === action.payload.productId)[0].quantity = action.payload.quantity;
           updateCartStats(state);
         }
       })
       .addCase(removeProductFromCart.fulfilled, (state, action) => {
         if (action.payload.success) {
           const { productId } = action.payload;
-          state.items = state.items.filter((item) => item._id !== productId);
+          state.items = state.items.filter((item) => item.product_id !== productId);
           updateCartStats(state);
         }
       });
