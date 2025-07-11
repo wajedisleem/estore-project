@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useCallback } from 'react';
 import { createContext, useState, useContext } from 'react';
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithPopup, signOut } from 'firebase/auth';
 import { auth, provider } from './Firebase';
 
 const AUTH_LOCAL_STORAGE_KEY = 'estore-auth';
@@ -17,9 +17,21 @@ const AuthProvider = ({ children }) => {
 
     try {
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log('User Info:', user);
-      alert(`Welcome ${user.displayName}`);
+      const token = await result.user.getIdToken();
+      console.log('Firebase Token:', token);
+      axios.post(`${BASE_URL}/login`, { token })
+        .then((response) => {
+          localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, response.data.token);
+          setCurrentUser(response.data.user);
+        })
+        .catch(() => {
+          localStorage.removeItem(AUTH_LOCAL_STORAGE_KEY);
+          setCurrentUser(null);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+
     } catch (err) {
       console.error(err.message);
     }
@@ -63,6 +75,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const logout = useCallback(() => {
+    signOut(auth);
     localStorage.removeItem(AUTH_LOCAL_STORAGE_KEY);
     setCurrentUser(null);
   }, []);
