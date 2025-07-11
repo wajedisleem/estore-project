@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 import Cart from '../database/schemas/cart.schema.js';
 import Product from '../database/schemas/product.schema.js';
+import Translations from '../i18n/translations.js';
 
 class CartController {
   static async get(req, res) {
@@ -45,16 +46,25 @@ class CartController {
       const { productId, quantity = 1 } = req.body;
 
       if (!mongoose.Types.ObjectId.isValid(productId)) {
-        return res.status(400).json({ success: false, message: 'Invalid product ID' });
+        return res.status(400).json({
+          success: false,
+          message: Translations[req.lang].cart.invalidProductId
+        });
       }
 
       const product = await Product.findById(productId);
       if (!product) {
-        return res.status(404).json({ success: false, message: 'Product not found' });
+        return res.status(404).json({
+          success: false,
+          message: Translations[req.lang].cart.productNotFound
+        });
       }
 
       if (quantity > product.stock) {
-        return res.status(400).json({ success: false, message: 'Quantity exceeds available stock' });
+        return res.status(400).json({
+          success: false,
+          message: Translations[req.lang].cart.quantityExceedsStock
+        });
       }
 
       if (cartId) {
@@ -94,7 +104,11 @@ class CartController {
         quantity
       };
 
-      return res.status(200).json({ success: true, message: 'Product added to cart', product: item });
+      return res.status(200).json({
+        success: true,
+        message: Translations[req.lang].cart.productAddedToCart,
+        product: item
+      });
     } catch (error) {
       console.error('Error adding product to cart:', error);
       return res.sendStatus(500);
@@ -115,13 +129,21 @@ class CartController {
       }
 
       if (!cart) {
-        return res.status(404).json({ success: false, message: 'Product not found in cart' });
+        return res.status(404).json({
+          success: false,
+          message: Translations[req.lang].cart.itemNotFound
+        });
       }
 
       cart.quantity = quantity;
       await cart.save();
 
-      return res.status(200).json({ success: true, message: 'Product quantity updated', productId, quantity });
+      return res.status(200).json({
+        success: true,
+        message: Translations[req.lang].cart.productUpdated,
+        productId,
+        quantity
+      });
     } catch (error) {
       return res.sendStatus(500);
     }
@@ -140,12 +162,19 @@ class CartController {
       }
 
       if (!cart) {
-        return res.status(404).json({ success: false, message: 'Product not found in cart' });
+        return res.status(404).json({
+          success: false,
+          message: Translations[req.lang].cart.itemNotFound
+        });
       }
 
       await Cart.deleteOne({ _id: cart._id });
 
-      return res.status(200).json({ success: true, message: 'Product removed from cart', productId });
+      return res.status(200).json({
+        success: true,
+        message: Translations[req.lang].cart.productRemovedFromCart,
+        productId
+      });
     } catch (error) {
       return res.sendStatus(500);
     }

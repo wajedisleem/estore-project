@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import admin from 'firebase-admin';
 import User from '../database/schemas/user.schema.js';
+import Translations from '../i18n/translations.js';
 
 admin.initializeApp({
   credential: admin.credential.cert({
@@ -25,7 +26,10 @@ class AuthController {
 
     const decodedToken = await admin.auth().verifyIdToken(token);
     if (!decodedToken) {
-      return res.status(401).json({ error: 'Invalid token' });
+      return res.status(401).json({
+        success: false,
+        message: Translations[req.lang].auth.invalidToken
+      });
     }
 
     let user = await User.findOne({ email: decodedToken.email });
@@ -38,7 +42,12 @@ class AuthController {
     }
 
     token = jwt.sign({ id: user._id, fullname: user.name }, process.env.JWT_SECRET_KEY, { expiresIn: '120d' });
-    return res.status(200).json({ token, user: { id: user._id, fullname: user.name } });
+    return res.status(200).json({
+      success: true,
+      message: Translations[req.lang].auth.loginSuccess,
+      token,
+      user: { id: user._id, fullname: user.name }
+    });
   }
 
   static async verify(req, res) {

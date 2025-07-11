@@ -4,6 +4,7 @@ import Cart from '../database/schemas/cart.schema.js';
 import Order from '../database/schemas/order.schema.js';
 import User from '../database/schemas/user.schema.js';
 import EmailService from '../services/email.service.js';
+import Translations from '../i18n/translations.js';
 
 class OrderController {
   static async place(req, res) {
@@ -26,7 +27,10 @@ class OrderController {
       }
 
       if (orderProducts.length === 0) {
-        return res.status(400).json({ success: false, message: 'No valid products found in the order' });
+        return res.status(400).json({
+          success: false,
+          message: Translations[req.lang].order.invalidOrderData
+        });
       }
 
       let sub_total = orderProducts.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -56,16 +60,15 @@ class OrderController {
       res.clearCookie('cartId');
 
       const user = await User.findById(req.user.id);
-      EmailService.sendOrderConfirmation(user.name, user.email, {order_id: order._id, name: user.name, sub_total, shipping, tax, total_amount});
+      EmailService.sendOrderConfirmation(user.name, user.email, { order_id: order._id, name: user.name, sub_total, shipping, tax, total_amount });
 
       return res.status(200).json({
         success: true,
-        message: 'Order placed successfully',
+        message: Translations[req.lang].order.orderPlaced,
         order_id: order._id,
         total_amount: total_amount
       });
     } catch (error) {
-      console.error('Error placing order:', error);
       return res.sendStatus(500);
     }
   }
