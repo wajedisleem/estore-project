@@ -50,6 +50,7 @@ const orderSchema = new Schema(
   },
   {
     collection: 'order',
+    timestamps: true,
     versionKey: false
   }
 );

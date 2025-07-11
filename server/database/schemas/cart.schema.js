@@ -24,6 +24,7 @@ const cartSchema = new Schema(
   },
   {
     collection: 'cart',
+    timestamps: true,
     versionKey: false
   }
 );
