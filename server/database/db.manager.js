@@ -6,8 +6,7 @@ class DBManager {
       if (mongoose.connection.readyState !== 1) {
         await mongoose.connect(process.env.MONGODB_URI, {
           useNewUrlParser: true,
-          useUnifiedTopology: true,
-          ssl: true
+          useUnifiedTopology: true
         });
         console.log('Mongoose connection established');
       }
