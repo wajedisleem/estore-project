@@ -11,9 +11,19 @@ const AuthButton = ({ mobile = false }) => {
   }, [verify]);
 
   return (
-    <a onClick={!currentUser ? login : logout} className={`${styles['btn-auth']} ${mobile && styles['btn-auth-mobile']}`}>
-      {!currentUser ? 'Login' : 'Logout'}
-    </a>
+    <>
+      {!loading && currentUser && (
+        <a onClick={logout} className={`${styles['btn-auth']} ${mobile && styles['btn-auth-mobile']}`}>
+          Logout
+        </a>
+      )}
+      {!loading && !currentUser && (
+        <a onClick={login} className={styles['btn-auth']}>
+          <img src="/images/icons/google.svg" alt="Google Icon" />
+          <span>Login</span>
+        </a>
+      )}
+    </>
   );
 };
 export { AuthButton };

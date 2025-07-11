@@ -7,10 +7,12 @@ import { getOrderDate, getDeliveryDate } from '../../../utils/OrderInfo';
 import { clearCart } from '../../../store/slices/cartSlice';
 
 import styles from './CartSummary.module.css';
+import { useAuth } from '../../../auth/AuthProvider';
 
 const CartSummary = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { currentUser, login } = useAuth();
 
   const { items, subTotal, shipping, tax, totalAmount } = useSelector((state) => state.cart);
 
@@ -107,10 +109,20 @@ const CartSummary = () => {
           <span>{totalAmount}</span>
         </span>
       </div>
-      <a onClick={handlePlaceOrderClick} className={styles['btn-place-order']}>
-        {!loading && <FormattedMessage id="Cart.Summary.PlaceOrder" />}
-        {loading && <FormattedMessage id="Cart.Summary.PlacingOrder" />}
-      </a>
+
+      {currentUser && (
+        <a onClick={handlePlaceOrderClick} className={styles['btn-place-order']}>
+          {!loading && <FormattedMessage id="Cart.Summary.PlaceOrder" />}
+          {loading && <FormattedMessage id="Cart.Summary.PlacingOrder" />}
+        </a>
+      )}
+
+      {!currentUser && (
+        <a onClick={login} className={styles['btn-auth']}>
+          <img src="/images/icons/google.svg" alt="Google Icon" />
+          <span>Continue with Google</span>
+        </a>
+      )}
     </div>
   );
 };

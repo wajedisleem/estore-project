@@ -65,7 +65,12 @@ html[lang='ar'] .cart-summary-total-amount {
   color: var(--clr-gray-darkest);
 }
 
-.btn-place-order {
+.btn-place-order,
+.btn-auth {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
   padding: 0.8rem;
   transition: background-color 0.3s;
   background-color: #000;
@@ -76,11 +81,14 @@ html[lang='ar'] .cart-summary-total-amount {
   color: var(--clr-white);
   text-align: center;
   text-decoration: none;
+
 }
 
-.btn-place-order:hover {
+.btn-place-order:hover,
+.btn-auth:hover {
   background-color: var(--clr-gray-darkest);
 }
+
 
 @media (max-width: 480px) {
   .cart-summary {

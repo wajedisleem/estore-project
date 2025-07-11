@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useCallback } from 'react';
 import { createContext, useState, useContext } from 'react';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, provider } from './Firebase';
 
 const AUTH_LOCAL_STORAGE_KEY = 'estore-auth';
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -11,7 +13,18 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
-  const login = useCallback(() => {
+  const login = useCallback(async () => {
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log('User Info:', user);
+      alert(`Welcome ${user.displayName}`);
+    } catch (err) {
+      console.error(err.message);
+    }
+
+
     setLoading(true);
     axios
       .post(`${BASE_URL}/login`)
