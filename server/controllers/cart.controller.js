@@ -11,7 +11,7 @@ class CartController {
       let userId = req.user?.id;
 
       if(userId && cartId) {
-        Cart.updateMany({ cartId: cartId, user: { $exists: false } }, { $set: { user: userId } });
+        await Cart.updateMany({ cartId: cartId, user: { $exists: false } }, { $set: { user: userId } });
       }
 
       const products = await Cart.find({ $or: [{ cartId: cartId }, { user: userId }] }).populate('product', 'en_name ar_name en_category ar_category price image');
