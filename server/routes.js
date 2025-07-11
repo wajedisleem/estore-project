@@ -4,6 +4,8 @@ import AuthController from './controllers/auth.controller.js';
 import ProductController from './controllers/product.controller.js';
 import CartController from './controllers/cart.controller.js';
 import OrderController from './controllers/order.controller.js';
+import { validateCartAdd, validateCartUpdate, validateCartRemove } from './validators/cart.validator.js';
+import { validateOrderPlace } from './validators/order.validator.js';
 
 const router = Router();
 
@@ -24,10 +26,10 @@ router.get('/products/:id', ProductController.details);
 router.get('/products/:id/related', ProductController.related);
 
 router.get('/cart', CartController.get);
-router.post('/cart', CartController.add);
-router.put('/cart/:productId', CartController.update);
-router.delete('/cart/:productId', CartController.remove);
+router.post('/cart', validateCartAdd, CartController.add);
+router.put('/cart/:productId', validateCartUpdate, CartController.update);
+router.delete('/cart/:productId', validateCartRemove, CartController.remove);
 
-router.post('/order', OrderController.place);
+router.post('/order', validateOrderPlace, OrderController.place);
 
 export default router;
