@@ -18,7 +18,6 @@ const AuthProvider = ({ children }) => {
     try {
       const result = await signInWithRedirect(auth, provider);
       const token = await result.user.getIdToken();
-      console.log('Firebase Token:', token);
       axios.post(`${BASE_URL}/login`, { token })
         .then((response) => {
           localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, response.data.token);
