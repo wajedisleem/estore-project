@@ -1,6 +1,7 @@
 import styles from './Menu.module.css';
 import { useLanguage } from '../../i18n/TranslationProvider';
 import { MenuItem } from '../elements/MenuItem';
+import { AuthButton } from '../elements/AuthButton';
 import { LanguageSwitcher } from '../elements/LanguageSwitcher';
 
 const Menu = ({ show, closeMenu }) => {
