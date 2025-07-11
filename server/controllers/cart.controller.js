@@ -10,15 +10,11 @@ class CartController {
       let cartId = req.cookies.cartId;
       let userId = req.user.id;
 
-      let filter = {};
-      if (cartId && mongoose.Types.ObjectId.isValid(cartId)) {
-        filter.cart = cartId;
-      }
-      if (userId && mongoose.Types.ObjectId.isValid(userId)) {
-        filter.user = userId;
+      if(userId && cartId) {
+        Cart.updateMany({ cartId: cartId, user: { $exists: false } }, { $set: { user: userId } });
       }
 
-      const products = await Cart.find(filter).populate('product', 'en_name ar_name en_category ar_category price image');
+      const products = await Cart.find({ $or: [{ cartId: cartId }, { user: userId }] }).populate('product', 'en_name ar_name en_category ar_category price image');
       let items = products.map((item) => {
         return {
           product_id: item.product._id,
@@ -44,13 +40,6 @@ class CartController {
       let userId = req.user?.id;
 
       const { productId, quantity = 1 } = req.body;
-
-      if (!mongoose.Types.ObjectId.isValid(productId)) {
-        return res.status(400).json({
-          success: false,
-          message: Translations[req.lang].cart.invalidProductId
-        });
-      }
 
       const product = await Product.findById(productId);
       if (!product) {
