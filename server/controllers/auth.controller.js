@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import admin from 'firebase-admin';
-import User from '../database/schemas/user.schema';
+import User from '../database/schemas/user.schema.js';
 
 admin.initializeApp({
   credential: admin.credential.cert({
