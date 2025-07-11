@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+
 class AuthController {
   static async login(req, res) {
     const token = jwt.sign({ id: 1, fullname: 'Wajed Isleem' }, process.env.JWT_SECRET_KEY, { expiresIn: '120d' });
@@ -8,7 +10,7 @@ class AuthController {
     if (!req.user) {
       return res.sendStatus(401);
     }
-    return res.status(200).json(req.user);
+    return res.status(200).json({ id: req.user.id, fullname: req.user.fullname });
   }
 }
 
