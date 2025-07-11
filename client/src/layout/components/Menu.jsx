@@ -14,6 +14,7 @@ const Menu = ({ show, closeMenu }) => {
         ))}
       </ul>
       <div className={styles['mobile-buttons']}>
+        <AuthButton />
         <LanguageSwitcher mobile={true} />
       </div>
     </nav>

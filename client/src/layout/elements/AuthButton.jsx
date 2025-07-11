@@ -18,7 +18,7 @@ const AuthButton = ({ mobile = false }) => {
         </a>
       )}
       {!loading && !currentUser && (
-        <a onClick={login} className={styles['btn-auth']}>
+        <a onClick={login} className={`${styles['btn-auth']} ${mobile && styles['btn-auth-mobile']}`}>
           <img src="/images/icons/google.svg" alt="Google Icon" />
           <span>Login</span>
         </a>
