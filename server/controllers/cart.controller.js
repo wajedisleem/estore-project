@@ -8,7 +8,7 @@ class CartController {
   static async get(req, res) {
     try {
       let cartId = req.cookies.cartId;
-      let userId = req.user.id;
+      let userId = req.user?.id;
 
       if(userId && cartId) {
         Cart.updateMany({ cartId: cartId, user: { $exists: false } }, { $set: { user: userId } });
@@ -30,6 +30,7 @@ class CartController {
 
       return res.status(200).json(items);
     } catch (error) {
+      console.error('Error fetching cart:', error);
       return res.sendStatus(500);
     }
   }
