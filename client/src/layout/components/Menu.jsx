@@ -1,8 +1,8 @@
 import styles from './Menu.module.css';
 import { useLanguage } from '../../i18n/TranslationProvider';
 import { MenuItem } from '../elements/MenuItem';
-import { AuthButton } from '../elements/AuthButton';
 import { LanguageSwitcher } from '../elements/LanguageSwitcher';
+import { AuthButton } from '../elements/AuthButton';
 
 const Menu = ({ show, closeMenu }) => {
   const { currentLanguage } = useLanguage();
@@ -15,8 +15,8 @@ const Menu = ({ show, closeMenu }) => {
         ))}
       </ul>
       <div className={styles['mobile-buttons']}>
-        <AuthButton mobile={true} />
         <LanguageSwitcher mobile={true} />
+        <AuthButton mobile={true} />
       </div>
     </nav>
   );
