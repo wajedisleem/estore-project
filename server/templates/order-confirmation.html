@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation - eStore Project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+      }
+
+      .header {
+        background: #000;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .order-details {
+        background: #f7fafc;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .order-id {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .summary {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #e2e8f0;
+      }
+
+      .footer {
+        background: #f7fafc;
+        padding: 25px;
+        text-align: center;
+        color: #718096;
+        font-size: 14px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .footer p {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin: 10px;
+          border-radius: 8px;
+        }
+
+        .header,
+        .content {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase</p>
+      </div>
+
+      <div class="content">
+        <div class="greeting">Hi {{name}},</div>
+
+        <p>Great news! Your order has been confirmed and we're getting it ready for shipment.</p>
+
+        <div class="order-details">
+          <div class="order-header">
+            <div class="order-id">Order #{{order_id}}</div>
+          </div>
+          <p>Here are the details of your order:</p>
+          <div class="summary">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px">
+              <tr>
+                <td>Subtotal:</td>
+                <td align="right">CAD {{sub_total}}</td>
+              </tr>
+              <tr>
+                <td>Shipping:</td>
+                <td align="right">CAD {{shipping}}</td>
+              </tr>
+              <tr>
+                <td>Tax:</td>
+                <td align="right">CAD {{tax}}</td>
+              </tr>
+            </table>
+          </div>
+            <div class="summary">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px">
+              <tr>
+                <td style="font-weight: bold">Total:</td>
+                <td align="right" style="font-weight: bold">CAD {{total_amount}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <p>If you have any questions about your order, feel free to contact our customer support team. We're here to help!</p>
+      </div>
+
+      <div class="footer">
+        <p><strong>eStore Project</strong> - Your trusted online store</p>
+        <p>Need help? Contact us at support@estoreproject.online or visit our Help Center</p>
+      </div>
+    </div>
+  </body>
+</html>
