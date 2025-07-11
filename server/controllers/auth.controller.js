@@ -22,9 +22,6 @@ admin.initializeApp({
 class AuthController {
   static async login(req, res) {
     let { token } = req.body;
-    if (!token) {
-      return res.status(400).json({ error: 'Token is required' });
-    }
 
     const decodedToken = await admin.auth().verifyIdToken(token);
     if (!decodedToken) {

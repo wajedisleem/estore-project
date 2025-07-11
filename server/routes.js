@@ -4,6 +4,7 @@ import AuthController from './controllers/auth.controller.js';
 import ProductController from './controllers/product.controller.js';
 import CartController from './controllers/cart.controller.js';
 import OrderController from './controllers/order.controller.js';
+import { validateLogin } from './validators/auth.validator.js';
 import { validateCartAdd, validateCartUpdate, validateCartRemove } from './validators/cart.validator.js';
 import { validateOrderPlace } from './validators/order.validator.js';
 
@@ -14,7 +15,7 @@ router.get('/health', HomeController.health);
 router.get('/log', HomeController.log);
 router.get('/environment', HomeController.environment);
 
-router.post('/login', AuthController.login);
+router.post('/login', validateLogin, AuthController.login);
 router.get('/verify', AuthController.verify);
 
 router.get('/products/offer', ProductController.offer);
