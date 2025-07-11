@@ -1,3 +1,5 @@
+import Translations from "../i18n/translations.js";
+
 const validateOrderPlace = (req, res, next) => {
   const { products } = req.body;
 
@@ -6,7 +8,10 @@ const validateOrderPlace = (req, res, next) => {
   }
   
   if (!products || !Array.isArray(products) || products.length === 0) {
-    return res.status(400).json({ success: false, message: 'Products array is required and cannot be empty' });
+    return res.status(400).json({
+      success: false,
+      message: Translations[req.lang].order.invalidOrderData
+    });
   }
 
   next();
