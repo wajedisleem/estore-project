@@ -14,42 +14,28 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   const login = useCallback(async () => {
-
     try {
       const result = await signInWithPopup(auth, provider);
       const token = await result.user.getIdToken();
-      axios.post(`${BASE_URL}/login`, { token })
-        .then((response) => {
-          localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, response.data.token);
-          setCurrentUser(response.data.user);
-        })
-        .catch(() => {
-          localStorage.removeItem(AUTH_LOCAL_STORAGE_KEY);
-          setCurrentUser(null);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-
+      if(token){
+        setLoading(true);
+        axios
+          .post(`${BASE_URL}/login`, { token })
+          .then((response) => {
+            localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, response.data.token);
+            setCurrentUser(response.data.user);
+          })
+          .catch(() => {
+            localStorage.removeItem(AUTH_LOCAL_STORAGE_KEY);
+            setCurrentUser(null);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
     } catch (err) {
       console.error(err.message);
     }
-
-
-    setLoading(true);
-    axios
-      .post(`${BASE_URL}/login`)
-      .then((response) => {
-        localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, response.data.token);
-        setCurrentUser(response.data.user);
-      })
-      .catch(() => {
-        localStorage.removeItem(AUTH_LOCAL_STORAGE_KEY);
-        setCurrentUser(null);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
   }, []);
 
   const verify = useCallback(() => {

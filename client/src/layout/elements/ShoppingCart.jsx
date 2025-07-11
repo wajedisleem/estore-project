@@ -5,16 +5,18 @@ import { FormattedMessage } from 'react-intl';
 import { fetchCart } from '../../store/slices/cartSlice';
 
 import styles from './ShoppingCart.module.css';
+import { useAuth } from '../../auth/AuthProvider';
 
 const ShoppingCart = () => {
   const location = useLocation();
+  const { currentUser } = useAuth();
   const dispatch = useDispatch();
 
   const { totalItems, totalAmount } = useSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(fetchCart());
-  }, [dispatch]);
+  }, [currentUser, dispatch]);
 
   return (
     <Link to="/cart" className={`${styles['header-cart']} ${location.pathname === '/cart' && styles['header-cart-active']}`}>
