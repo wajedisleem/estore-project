@@ -21,7 +21,6 @@ admin.initializeApp({
 
 class AuthController {
   static async login(req, res) {
-    console.log('Login request received:', req.body);
     let { token } = req.body;
     if (!token) {
       return res.status(400).json({ error: 'Token is required' });
