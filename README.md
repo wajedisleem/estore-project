@@ -236,12 +236,13 @@ POST   /verify        # User verify
 #### 🛍️ Products
 
 ```http
-GET    /products            # Search products
-GET    /products/:id        # Get product details
-GET    /products/offer      # Get offer products
-GET    /products/new        # Get new products
-GET    /products/featured   # Get featured products
-GET    /products/search     # Search products
+GET    /products                # Search products
+GET    /products/:id            # Get product details
+GET    /products/:id/related    # Get product's related
+GET    /products/offer          # Get offer products
+GET    /products/new            # Get new products
+GET    /products/featured       # Get featured products
+GET    /products/search         # Search products
 
 ```
 
