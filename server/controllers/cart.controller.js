@@ -14,7 +14,16 @@ class CartController {
         await Cart.updateMany({ cartId: cartId, user: { $exists: false } }, { $set: { user: userId } });
       }
 
-      const products = await Cart.find({ $or: [{ cartId: cartId }, { user: userId }] }).populate('product', 'en_name ar_name en_category ar_category price image');
+      let filter = {};
+      if (cartId) {
+        filter.cartId = cartId;
+      } 
+      
+      if (userId) {
+        filter.user = userId;
+      }
+
+      const products = await Cart.find({ $or: [filter] }).populate('product', 'en_name ar_name en_category ar_category price image');
       let items = products.map((item) => {
         return {
           product_id: item.product._id,
