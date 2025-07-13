@@ -89,6 +89,10 @@ html[lang='ar'] .cart-summary-total-amount {
   background-color: var(--clr-gray-darkest);
 }
 
+.btn-auth{
+  font-size: 0.9rem;
+}
+
 
 @media (max-width: 480px) {
   .cart-summary {
