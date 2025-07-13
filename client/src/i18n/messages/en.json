@@ -3,6 +3,8 @@
     "Title": "eStore Project",
     "By": "By Wajed Isleem",
     "Total": "Total",
+    "Login": "Login",
+    "Logout": "Logout",
     "Copyrights": "All Right Reserved © 2025"
   },
   "Shared": {
@@ -80,6 +82,7 @@
       "FreeShipping": "Free",
       "Tax": "Tax",
       "Total": "Total",
+      "Login": "Continue with Google",
       "PlaceOrder": "Place Order",
       "PlacingOrder": "Placing Order ..."
     }

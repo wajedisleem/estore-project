@@ -120,7 +120,9 @@ const CartSummary = () => {
       {!currentUser && (
         <a onClick={login} className={styles['btn-auth']}>
           <img src="/images/icons/google.svg" alt="Google Icon" />
-          <span>Continue with Google</span>
+          <span>
+            <FormattedMessage id="Cart.Summary.Login" />
+          </span>
         </a>
       )}
     </div>
