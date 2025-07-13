@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import language from './middleware/language.middleware.js';
 import authentication from './middleware/auth.middleware.js';
+import loading from './middleware/loading.middleware.js';
 import router from './routes.js';
 import notFoundHandler from './handlers/notfound.handler.js';
 import errorHandler from './handlers/error.handler.js';
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use(language);
 app.use(authentication);
+app.use(loading)
 
 app.use(router);
 
