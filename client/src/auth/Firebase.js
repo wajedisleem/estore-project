@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAfOPHBgb7SwUR_AHucWml6HjQqA1hQGjc',
-  authDomain: 'estore-project-5731e.firebaseapp.com',
+  authDomain: 'estore-project.online',
   projectId: 'estore-project-5731e',
   storageBucket: 'estore-project-5731e.firebasestorage.app',
   messagingSenderId: '54889190141',
